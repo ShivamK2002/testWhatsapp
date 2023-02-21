@@ -1,0 +1,19 @@
+{
+  "name": "testwhatsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShivamK2002/testWhatsapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShivamK2002/testWhatsapp/issues"
+  },
+  "homepage": "https://github.com/ShivamK2002/testWhatsapp#readme"
+}

@@ -10,15 +10,18 @@ jobs:
   messageWhatsApp:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: install twilio
-        run: npm i twilio
-      - name: run code
-        run: index.js
-      - name: Notification WhatsApp
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Twilio
+        run: npm install twilio
+      - name: Run code
+        run: node index.js
+        shell: bash
+        working-directory: ./ # assuming index.js is in the root directory
+      - name: Notification via WhatsApp
         id: whatsapp-notify
         env:
-          account_sid: ${{ secrets.twilio_account_sid }}
-          auth_token: ${{ secrets.twilio_auth_token }}
-          to_whatsapp_no: ${{ secrets.twilio_to_whatsapp_no }}
-        uses: khaled-ibtikar/whatsapp-push-notify-action@master
+          TWILIO_ACCOUNT_SID: ${{ secrets.twilio_account_sid }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.twilio_auth_token }}
+          TO_WHATSAPP_NO: ${{ secrets.twilio_to_whatsapp_no }}
+        uses: khaled-ibtikar/whatsapp-push-notify-action@v1.0.0
