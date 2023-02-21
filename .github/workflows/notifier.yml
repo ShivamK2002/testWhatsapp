@@ -14,7 +14,7 @@ jobs:
       - name: install twilio
         run: npm i twilio
       - name: run code
-        run: node index.js
+        run: index.js
       - name: Notification WhatsApp
         id: whatsapp-notify
         env:
